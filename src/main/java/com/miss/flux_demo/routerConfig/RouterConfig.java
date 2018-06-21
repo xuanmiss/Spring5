@@ -25,6 +25,7 @@ public class RouterConfig {
     public RouterFunction<ServerResponse> timeRouter()
     {
         return route(GET("/time"),req -> timeHandler.getTime(req))
-                .andRoute(GET("/date"),timeHandler::getDate);
+                .andRoute(GET("/date"),timeHandler::getDate)
+                .andRoute(GET("/times"),timeHandler::sendTimePerSec);
     }
 }
