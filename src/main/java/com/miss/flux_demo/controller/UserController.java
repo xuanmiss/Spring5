@@ -38,6 +38,7 @@ public class UserController {
 
     @GetMapping(value = "")
     public Flux<User> findAll() {
-        return this.userService.findAll().delayElements(Duration.ofSeconds(2));
+        return this.userService.findAll();
+//   .delayElements(Duration.ofSeconds(2))
     }
 }
